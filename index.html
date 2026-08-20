@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>刘昊坤 · 游戏音频设计师作品集</title>
+<meta name="description" content="游戏音频设计师刘昊坤的个人作品集：声音设计、Wwise × Unity 集成、音乐创作，正在寻找游戏音频实习。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=5" />
+</head>
+<body>
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
+<span class="orb orb-1" aria-hidden="true"></span>
+<span class="orb orb-2" aria-hidden="true"></span>
+<span class="orb orb-3" aria-hidden="true"></span>
+<div class="preloader" id="preloader">
+  <div class="pre-inner">
+    <p class="pre-name">刘昊坤</p>
+    <p class="pre-sub mono">LOADING SOUND… <span id="prePct">0</span>%</p>
+    <div class="pre-bar"><i id="preBar"></i></div>
+  </div>
+</div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- 顶部栏 -->
+<nav class="topbar">
+  <a class="tb-left" href="resume.pdf" target="_blank" rel="noopener">下载简历 ↓</a>
+  <div class="tb-center">
+    <a href="#about">个人介绍</a>
+    <a href="#work">作品项目</a>
+    <a href="#contact">联系我</a>
+  </div>
+  <div class="tb-right">
+    <span class="tb-brand mono">GAME AUDIO / 2026</span>
+    <button class="tb-menu" id="menuBtn" aria-label="菜单">菜单</button>
+  </div>
+</nav>
+<div class="menu-overlay" id="menuOverlay">
+  <button class="menu-close" id="menuClose">关闭 ×</button>
+  <ol class="menu-list">
+    <li><a href="#home"><span class="mono">01</span> 首页</a></li>
+    <li><a href="#about"><span class="mono">02</span> 个人介绍</a></li>
+    <li><a href="#work"><span class="mono">03</span> 作品项目</a></li>
+    <li><a href="#contact"><span class="mono">04</span> 联系我</a></li>
+  </ol>
+</div>
+
+<!-- 01 首页 -->
+<section class="hero-section" id="home">
+  <canvas id="torusCanvas" aria-hidden="true"></canvas>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-top" aria-hidden="true"></div>
+  <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="hero-links">
+    <a href="https://www.bilibili.com/video/BV1si876vEoA/" target="_blank" rel="noopener">BILIBILI 观看视频作品 ↗</a>
+    <a href="https://pan.baidu.com/s/1apdSZbR70OuqXlNbfETbfw" target="_blank" rel="noopener">百度网盘 完整作品集 · 提取码 p65h ↗</a>
+    <a href="https://my.feishu.cn/docx/E2ysdLph7oTP9yxjzdjcEXjGnuh" target="_blank" rel="noopener">飞书作品集 · 文档直开 ↗</a>
+  </div>
+
+  <div class="hero-inner">
+    <p class="hero-eyebrow mono">GAME AUDIO · PORTFOLIO · 2026</p>
+    <p class="hero-label mono">求职方向</p>
+    <h1 class="hero-roles">游戏音频设计师 / 声音设计 / 音乐制作</h1>
+    <p class="hero-sub">游戏音频设计师 · 正在寻找实习</p>
+    <div class="hero-skills">
+      <span>Sound Design</span><span>Wwise</span><span>Unity</span><span>Reaper</span><span>Cubase</span><span>音乐创作</span>
+    </div>
+    <h2 class="hero-title">PORTFOLIO<br />FOR LIU HAOKUN</h2>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="#about">按网页流程游览 ↓</a>
+      <a class="btn btn-ghost" href="https://my.feishu.cn/docx/E2ysdLph7oTP9yxjzdjcEXjGnuh" target="_blank" rel="noopener">直接查看作品集 ↘</a>
+      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">下载简历 ↓</a>
+    </div>
+  </div>
+  <a class="scroll-hint mono" href="#about">向下探索</a>
+</section>
+
+
+<!-- 游戏海报条带 -->
+<div class="poster-marquee" aria-hidden="true"><div class="pm-track" id="pmTrack"></div></div>
+
+<!-- 02 个人介绍 -->
+<section class="about-section section" id="about">
+  <div class="section-head">
+    <span class="sec-no mono">02 / 个人介绍</span>
+    <p class="sec-en mono">A B O U T / E X P E R I E N C E</p>
+    <h2>关于我</h2>
+  </div>
+  <div class="about-layout">
+    <div class="about-intro">
+      <img class="about-photo" src="photo.jpg" alt="刘昊坤" />
+      <p>我叫刘昊坤，<strong>武汉音乐学院电子音乐作曲专业在读研究生</strong>、游戏音频设计师，擅长<strong>声音设计、Wwise 集成与音乐创作</strong>，
+          能独立完成从单条音效质感到整套音频系统落地的全流程。</p>
+      <p class="job-intent"><b>求职意向：</b>游戏音频 / 声音设计 / 音乐制作（找实习）</p>
+      <p class="job-city">工作地点：武汉 / 北京 / 上海 / 广州 / 深圳 / 成都 / 杭州</p>
+      <h3>技能</h3>
+      <div class="hero-skills">
+        <span>Wwise</span><span>Unity × Wwise</span><span>Reaper</span><span>Logic Pro</span><span>Cubase</span><span>Serum</span><span>Omnisphere</span><span>Soundly</span><span>Soundminer</span><span>Sibelius</span>
+      </div>
+      <h3>荣誉</h3>
+      <p class="ge-items">「新声杯」作曲比赛三等奖 · 本科优秀毕业生 · 五好学生 · 优秀共青团员 · 连续两年一等奖学金、校友奖学金（专业前10%）· 青马工程优秀学员 · 志愿服务先进个人</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-card glass-panel">
+        <span class="tl-year mono">2022 — 2026</span><b class="tl-no mono">01</b>
+        <div><h4>武汉音乐学院 · 录音艺术</h4><p>本科 · 优秀毕业生 · 主科 90–95 分、总均分 80+</p></div>
+      </div>
+      <div class="tl-card glass-panel">
+        <span class="tl-year mono">2026.09 —</span><b class="tl-no mono">02</b>
+        <div><h4>武汉音乐学院 · 电子音乐作曲</h4><p>硕士研究生在读 · 主攻声音设计与音乐创作</p></div>
+      </div>
+      <div class="tl-card glass-panel">
+        <span class="tl-year mono">2025</span><b class="tl-no mono">03</b>
+        <div><h4>国家级大创 · 古谱诗词吟唱艺术音乐会</h4><p>独立负责两个节目的原创作曲、排练监制与全程统筹</p></div>
+      </div>
+      <div class="tl-card glass-panel">
+        <span class="tl-year mono">2024 — 2025</span><b class="tl-no mono">04</b>
+        <div><h4>视唱练耳教材编写（两套）</h4><p>部分章节音频制作 + 6 章谱例编排，教材级交付</p></div>
+      </div>
+    <div class="glass-panel ge-block">
+      <h4 class="ge-title">游戏经历</h4>
+<div class="game-exp">
+        <p class="ge-cat mono">手游 / Mobile</p>
+        <p class="ge-items">英雄联盟手游·宗师 ｜ 原神·冒险等阶60 ｜ 明日方舟·120级 ｜ 明日方舟：终末地·60级 ｜ 炉石传说·狂野天梯前50 ｜ 皇室战争·14000杯</p>
+        <p class="ge-cat mono">端游 / PC</p>
+        <p class="ge-items">三角洲行动·500+小时 ｜ 暗黑破坏神4·折磨12难度通关 ｜ 魔兽世界·1000+小时 ｜ 怀旧服·冰冠堡垒英雄难度巫妖王通关</p>
+        <p class="ge-cat mono">Steam</p>
+        <p class="ge-items">150+款游戏：赛博朋克2077、黑神话·悟空、荒野大镖客2、双人成行、古墓丽影：崛起、生化危机8 等均已通关</p>
+      </div>
+      <p class="ge-note">深度玩家的身份，让我能站在玩家视角长期观察玩法与听觉反馈——把游戏体验直接转化为声音设计。</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 作品项目 -->
+<section class="work-section section" id="work">
+  <div class="section-head">
+    <span class="sec-no mono">03 / 能力与项目证据</span>
+    <p class="sec-en mono">作品集按游戏开发流程展示</p>
+    <h2>让声音，为游戏注入灵魂</h2>
+  </div>
+
+  <!-- 声音设计 -->
+  <div class="archive-block">
+    <h3 class="archive-title">声音设计：建立清晰的听觉身份</h3>
+    <div class="archive-project-grid">
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 01 · CG 音效</span>
+        <video controls preload="metadata" playsinline src="media/wow.mp4"></video>
+        <h4>魔兽世界 · 熊猫人之谜</h4>
+        <p class="ap-idea"><b>设计思路</b> 金属碰撞、护甲摩擦、拳脚着肉，分层叠加做出「一拳打实」的重量感，配合动作节奏做音画同步。</p>
+        <p class="ap-kw mono">写实拟音 / 打击分层 / 音画同步 / Foley</p>
+      </div>
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 02 · CG 音效</span>
+        <video controls preload="metadata" playsinline src="media/delta.mp4"></video>
+        <h4>三角洲行动</h4>
+        <p class="ap-idea"><b>设计思路</b> 在真实枪械细节之上叠加科幻能量层，做出有层次、有冲击力的射击音效。</p>
+        <p class="ap-kw mono">枪械拟真 / 科幻合成层 / 动态冲击</p>
+      </div>
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 03 · UI 音效</span>
+        <video controls preload="metadata" playsinline src="media/hs.mp4"></video>
+        <h4>炉石传说</h4>
+        <p class="ap-idea"><b>设计思路</b> 卡牌点击、拖动、放置都有独立反馈，音量/音色按层级区分，做到「手感扎实、反馈清晰、不抢画面」。</p>
+        <p class="ap-kw mono">UI 反馈层级 / 手感打磨 / 克制与清晰</p>
+      </div>
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 04 · 枪械音效</span>
+        <video controls preload="metadata" playsinline src="media/ow.mp4"></video>
+        <h4>守望先锋</h4>
+        <p class="ap-idea"><b>设计思路</b> 为科幻武器制作枪械音效，为黑洞特效设计专属音层：低频振荡 + 反向滤波做出「空间被吸进去」的扭曲感。</p>
+        <p class="ap-kw mono">科幻武器 / 特效拟声 / 声像与时间处理</p>
+      </div>
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 05 · 技能音效</span>
+        <video controls preload="metadata" playsinline src="media/mc.mp4"></video>
+        <h4>鸣潮</h4>
+        <p class="ap-idea"><b>设计思路</b> 冰魔法技能音效链：蓄力→释放→命中→碎裂→消散五阶段独立设计，做到「一技能一段戏」。</p>
+        <p class="ap-kw mono">技能音效链 / 元素质感 / 节奏曲线</p>
+      </div>
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 06 · UI 音效</span>
+        <video controls preload="metadata" playsinline src="media/genshin.mp4"></video>
+        <h4>原神</h4>
+        <p class="ap-idea"><b>设计思路</b> 二次元风格 UI：轻快、清脆、带一点「梦幻感」，关键节点用华丽音色强化仪式感。</p>
+        <p class="ap-kw mono">二次元审美 / 轻快音色 / 仪式感强化</p>
+      </div>
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 07 · UI 音效</span>
+        <video controls preload="metadata" playsinline src="media/arknights.mp4"></video>
+        <h4>明日方舟 · 终末地</h4>
+        <p class="ap-idea"><b>设计思路</b> 科技终端式 UI：主操作干脆利落，次级操作轻而克制，关键节点强化仪式感，整体干净、辨识度强。</p>
+        <p class="ap-kw mono">科技终端 UI / 层级克制 / 手感反馈</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引擎集成 -->
+  <div class="archive-block">
+    <h3 class="archive-title">交互音频系统：从游戏事件到可运行反馈</h3>
+    <div class="archive-project-grid">
+      <div class="archive-project wide glass-panel">
+        <span class="ap-tag mono">案例 / 01 · Wwise × Unity</span>
+        <div class="ap-video-wrap"><iframe src="//player.bilibili.com/player.html?bvid=BV1si876vEoA&page=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="3D Game Kit 音频重制"></iframe></div>
+        <h4>Unity 3D Game Kit 音频全流程重制</h4>
+        <p class="ap-idea"><b>设计思路</b> 对 Unity 官方示例 3D Game Kit 做全量音频重制：设计 → 160+ 条 Wwise 映射表 → 引擎集成联调 → 2 万字技术文档 → Windows 可试玩版。</p>
+        <div class="ap-tech"><span>材质 Switch</span><span>混响 RTPC</span><span>距离衰减</span><span>音乐三态</span><span>-18 LUFS</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 音乐制作 -->
+  <div class="archive-block">
+    <h3 class="archive-title">音乐制作能力展示</h3>
+    <div class="archive-project-grid">
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 01 · 声音设计型</span>
+        <audio controls preload="metadata" src="media/music1.wav"></audio>
+        <h4>幻听类电子音乐</h4>
+        <p class="ap-idea"><b>设计思路</b> 以声音设计驱动，注重音色质感与空间层次，营造「幻听」般的沉浸听感。</p>
+        <p class="ap-kw mono">合成器音色 / 空间层次</p>
+      </div>
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 02 · 混合类</span>
+        <audio controls preload="metadata" src="media/music2.wav"></audio>
+        <h4>夜舞铃影 · 霓虹·涟漪</h4>
+        <p class="ap-idea"><b>设计思路</b> 融合多种风格元素，附作品谱例，体现编曲、配器与和声层面的完整能力。</p>
+        <p class="ap-kw mono">编曲能力 / 风格融合 / 谱例实证</p>
+      </div>
+      <div class="archive-project glass-panel">
+        <span class="ap-tag mono">案例 / 03 · 应用类</span>
+        <audio controls preload="metadata" src="media/music3.wav"></audio>
+        <h4>海洋之歌</h4>
+        <p class="ap-idea"><b>设计思路</b> 面向实际应用场景的功能性音乐（游戏 / 视频 / 界面配乐），兼顾氛围与实用性。</p>
+        <p class="ap-kw mono">功能性配乐 / 场景适配 / 情绪表达</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 更多项目 -->
+  <div class="archive-block">
+    <h3 class="archive-title">更多项目</h3>
+    <div class="mini-grid">
+      <div class="mini glass-panel"><b>国家级大创 · 古谱诗词吟唱音乐会</b><p>独立负责两个节目的原创作曲、排练监制及全程统筹，音乐会顺利公演。</p></div>
+      <div class="mini glass-panel"><b>视唱练耳教材编写</b><p>部分章节音频制作 + 6 章谱例编排（Sibelius），教材级交付并用于校内教学。</p></div>
+      <div class="mini glass-panel"><b>「新声杯」作曲比赛</b><p>原创电子音乐作品参赛，获三等奖。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 联系我 -->
+<section class="contact-section section" id="contact">
+  <div class="section-head">
+    <span class="sec-no mono">04 / 联系我</span>
+    <p class="sec-en mono">L E T ' S  M A K E  S O M E  N O I S E</p>
+    <h2>用声音，为游戏注入灵魂</h2>
+  </div>
+  <div class="contact-cards">
+    <div class="c-card glass-panel"><span class="mono">电话</span><a href="tel:+8618995604425">189-9560-4425</a></div>
+    <div class="c-card glass-panel"><span class="mono">邮箱</span><a href="mailto:2796452079@qq.com">2796452079@qq.com</a></div>
+    <div class="c-card glass-panel"><span class="mono">城市</span><p>武汉（可接受：武汉 / 北京 / 上海 / 广州 / 深圳 / 成都 / 杭州）</p></div>
+    <div class="c-card glass-panel"><span class="mono">状态</span><p>硕士在读 · 寻找游戏音频实习</p></div>
+  </div>
+  <div class="contact-download">
+    <a class="btn btn-solid" href="resume.pdf" target="_blank" rel="noopener">下载简历 ↓</a>
+    <a class="btn btn-ghost" href="https://my.feishu.cn/docx/E2ysdLph7oTP9yxjzdjcEXjGnuh" target="_blank" rel="noopener">查看完整作品集 ↗</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 刘昊坤 · 游戏音频设计师 · 实习作品集</p>
+</footer>
+
+<script src="script.js?v=5"></script>
+</body>
+</html>
