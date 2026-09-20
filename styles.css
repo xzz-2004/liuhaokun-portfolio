@@ -217,3 +217,9 @@ img,video,audio { display:block; max-width:100%; }
 /* ============ 游戏经历卡片（右侧时间线） ============ */
 .ge-block { border-radius: 14px; padding: 16px 18px; margin-top: 4px; }
 .ge-title { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+
+
+/* ============ 配乐作品：音频列表 ============ */
+.ap-audio-list { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 12px; }
+.ap-audio-list span { color: var(--accent); font-size: 12px; letter-spacing: .08em; }
+.ap-audio-list audio { width: 100%; margin-bottom: 4px; }
